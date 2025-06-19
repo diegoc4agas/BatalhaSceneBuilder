@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TelaDeMenuController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <!-- Background com Glow e Motion Blur -->
+            <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Wallpapers/teladeinicio.jpg" />
+               </image>
+               <effect>
+                  <Glow>
+                     <input>
+                        <ColorAdjust brightness="-0.57">
+                           <input>
+                              <MotionBlur />
+                           </input>
+                        </ColorAdjust>
+                     </input>
+                  </Glow>
+               </effect>
+            </ImageView>
+
+            <!-- Título do Menu -->
+            <Label layoutX="211.0" layoutY="50.0" style="-fx-text-fill: white; -fx-font-size: 45px; -fx-font-weight: bold;" text="Bem-vindo ao Jogo!" textAlignment="CENTER">
+               <font>
+                  <Font name="Impact" />
+               </font>
+            </Label>
+
+            <!-- Botões do Menu Principal -->
+            <VBox alignment="CENTER" layoutX="77.0" layoutY="170.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Button fx:id="botaoBatalhar" onAction="#carregarTelaDeJogador" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-size: 18px;" text="Iniciar Batalha" />
+                  <Button fx:id="botaoConfiguracoes" onAction="#mudarConteudoTela" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-size: 18px;" text="Configurações" />
+                  <Button fx:id="botaoComoJogar" onAction="#mudarConteudoTela" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-size: 18px;" text="Como Jogar" />
+                  <Button fx:id="botaoRanking" onAction="#mudarConteudoTela" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-size: 18px;" text="Ranking" />
+                  <Button fx:id="botaoSair" onAction="#fecharJogo" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-size: 18px;" text="Sair do Jogo" />
+               </children>
+            </VBox>
+
+            <!-- Tela de Informações à Direita -->
+            <AnchorPane fx:id="telaInformacoes" layoutX="300.0" layoutY="170.0" prefHeight="350.0" prefWidth="450.0" style="-fx-background-color: rgba(0, 0, 0, 0.75); -fx-border-color: white; -fx-border-width: 2;">
+               <children>
+                  <Text fx:id="textoInformacoes" layoutX="20.0" layoutY="30.0" style="-fx-fill: white;" text="RPG - Devs do Caos\n\nBem-vindo ao jogo criado por:\n\n- Ruan\n- Diego\n- Gyss\n- Caique." wrappingWidth="410.0">
+                     <font>
+                        <Font name="Segoe UI" size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
